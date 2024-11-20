@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import Button from '../components/Button.astro';
+import Section from '../components/Section.astro';
+
+const services = [
+  {
+    title: 'Inspecciones Submarinas',
+    description: 'Tecnología avanzada de drones para la inspección minuciosa de estructuras submarinas, incluyendo puentes, tuberías y plataformas offshore.',
+    icon: '🔍',
+    image: '/inspection.jpg'
+  },
+  {
+    title: 'Monitoreo Ambiental',
+    description: 'Recolección integral de datos sobre calidad del agua, vida marina y otros factores ambientales utilizando sensores de última generación.',
+    icon: '🌊',
+    image: '/monitoring.jpg'
+  },
+  {
+    title: 'Búsqueda y Rescate',
+    description: 'Despliegue rápido de drones para operaciones eficientes de búsqueda y rescate submarino.',
+    icon: '🚨',
+    image: '/rescue.jpg'
+  },
+  {
+    title: 'Producción Audiovisual',
+    description: 'Captura de imágenes submarinas impresionantes para cine, televisión y otros medios usando cámaras de alta resolución.',
+    icon: '🎥',
+    image: '/production.jpg'
+  }
+];
+---
+
+<Layout title="Sur Profundo - Servicios de Robótica Marina">
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center bg-gradient-to-b from-primary-400 via-primary-300 to-primary-200 text-white pt-16">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6 font-poppins">Excelencia en Robótica Marina</h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto opacity-90">Líder en servicios de drones submarinos para inspección, monitoreo y exploración</p>
+      <Button href="#contact" variant="secondary">
+        Comenzar Ahora
+      </Button>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <Section id="services" background="white">
+    <h2 class="text-4xl font-bold text-center mb-12 text-primary-400 dark:text-primary-50">Nuestros Servicios</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {services.map(service => (
+        <ServiceCard {...service} />
+      ))}
+    </div>
+  </Section>
+
+  <!-- About Section -->
+  <Section id="about" background="light">
+    <h2 class="text-4xl font-bold text-center mb-12 text-primary-400 dark:text-primary-50">¿Por Qué Elegirnos?</h2>
+    <div class="max-w-3xl mx-auto">
+      <div class="grid gap-6">
+        {[
+          'Tecnología de drones avanzada con cámaras de alta resolución y sonar',
+          'Equipo experimentado de profesionales en robótica marina',
+          'Amplia gama de servicios submarinos',
+          'Compromiso con la calidad y satisfacción del cliente'
+        ].map(item => (
+          <div class="flex items-center gap-4 bg-white dark:bg-primary-400 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+            <span class="text-primary-200 dark:text-primary-100 text-2xl">✓</span>
+            <span class="text-gray-800 dark:text-primary-50">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <!-- Team Section -->
+  <Section id="team" background="white">
+    <h2 class="text-4xl font-bold text-center mb-12 text-primary-400 dark:text-primary-50">Nuestro Equipo</h2>
+    <div class="bg-primary-50 dark:bg-primary-400 p-8 rounded-xl shadow-lg max-w-3xl mx-auto">
+      <p class="text-center text-gray-800 dark:text-primary-50 leading-relaxed">
+        Nuestro equipo está formado por profesionales experimentados y cualificados dedicados a proporcionar servicios de robótica marina de la más alta calidad. Con experiencia en operaciones submarinas, análisis de datos y tecnología avanzada, garantizamos resultados excepcionales en cada proyecto.
+      </p>
+    </div>
+  </Section>
+
+  <!-- Contact Section -->
+  <Section id="contact" background="light">
+    <h2 class="text-4xl font-bold text-center mb-12 text-primary-400 dark:text-primary-50">Contáctanos</h2>
+    <div class="max-w-xl mx-auto">
+      <div class="p-6 bg-white rounded-lg shadow-md text-center">
+  <p class="mb-4 text-gray-600">
+    ¿Listo para explorar cómo nuestros servicios de robótica marina pueden beneficiar tu proyecto? Contáctanos hoy.
+  </p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <Button
+      href="mailto:surprofundo@gmail.com"
+      class="bg-primary-300 hover:bg-primary-400 text-white px-6 py-2 rounded-lg shadow w-full sm:w-auto"
+    >
+      surprofundo@gmail.com
+    </Button>
+    <Button
+      href="tel:+56971729203"
+      class="bg-primary-300 hover:bg-primary-400 text-white px-6 py-2 rounded-lg shadow w-full sm:w-auto"
+    >
+      +56971729203
+    </Button>
+  </div>
+</div>
+    </div>
+  </Section>
+</Layout>

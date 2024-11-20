@@ -1,0 +1,28 @@
+---
+interface Props {
+  id?: string;
+  class?: string;
+  background?: 'white' | 'light' | 'dark';
+}
+
+const { id, background = 'white', class: className = '' } = Astro.props;
+
+const backgrounds = {
+  white: 'bg-white dark:bg-gray-800',
+  light: 'bg-primary-50 dark:bg-gray-900',
+  dark: 'bg-primary-400 dark:bg-gray-900'
+};
+---
+
+<section 
+  id={id} 
+  class:list={[
+    'py-20',
+    backgrounds[background],
+    className
+  ]}
+>
+  <div class="container mx-auto px-4">
+    <slot />
+  </div>
+</section>
